@@ -11,7 +11,9 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="Controllers\" />
+    <ProjectReference Include="..\..\Core\RegistaShop.Order.Application\RegistaShop.Order.Application.csproj" />
+    <ProjectReference Include="..\..\Core\RegistaShop.Order.Domain\RegistaShop.Order.Domain.csproj" />
+    <ProjectReference Include="..\..\Infrastructure\RegistaShop.Order.Persistence\RegistaShop.Order.Persistence.csproj" />
   </ItemGroup>
 
 </Project>

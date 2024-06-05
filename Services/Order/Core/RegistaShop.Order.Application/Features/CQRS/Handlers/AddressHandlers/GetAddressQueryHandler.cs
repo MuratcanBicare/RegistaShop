@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 
 namespace RegistaShop.Order.Application.Features.CQRS.Handlers.AddressHandlers
 {
-	internal class GetAddressQueryHandler
+	public class GetAddressQueryHandler
 	{
 
 		private readonly IRepository<Address> _repository;
