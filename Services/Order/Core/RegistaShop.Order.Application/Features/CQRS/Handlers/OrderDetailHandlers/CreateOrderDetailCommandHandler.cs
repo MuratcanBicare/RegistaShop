@@ -25,10 +25,10 @@ namespace RegistaShop.Order.Application.Features.CQRS.Handlers.OrderDetailHandle
 			await _repository.CreateAsync(new OrderDetail
 			{
 
-				OrderDetailId = command.OrderingId,
+				OrderingId = command.OrderingId,
+				ProductAmount = command.ProductAmount,
 				ProductId = command.ProductId,
 				ProductName = command.ProductName,
-				ProductAmount = command.ProductAmount,
 				ProductPrice = command.ProductPrice,
 				ProductTotalPrice = command.ProductTotalPrice,
 

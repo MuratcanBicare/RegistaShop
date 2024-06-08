@@ -13,7 +13,7 @@ namespace RegistaShop.Order.Persistence.Context
 		protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
 		{
 
-			optionsBuilder.UseSqlServer("Server=...;inital Catalog=RegistaShopOrderDb;integrated Security=true;");
+			optionsBuilder.UseSqlServer("Server=localhost,1440;initial Catalog=RegistaShopOrderDb;User=sa;Password=123456aA*");
 
 		}
 

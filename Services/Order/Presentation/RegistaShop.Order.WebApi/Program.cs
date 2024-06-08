@@ -2,9 +2,12 @@ using RegistaShop.Order.Application.Features.CQRS.Handlers.AddressHandlers;
 using RegistaShop.Order.Application.Features.CQRS.Handlers.OrderDetailHandlers;
 using RegistaShop.Order.Application.Interfaces;
 using RegistaShop.Order.Application.Services;
+using RegistaShop.Order.Persistence.Context;
 using RegistaShop.Order.Persistence.Repositories;
 
 var builder = WebApplication.CreateBuilder(args);
+
+builder.Services.AddDbContext<OrderContext>();
 
 builder.Services.AddScoped(typeof(IRepository<>), typeof(Repository<>));
 builder.Services.AddApplicationService(builder.Configuration);
@@ -21,7 +24,7 @@ builder.Services.AddScoped<GetOrderDetailQueryHandler>();
 builder.Services.AddScoped<GetOrderDetailByIdQueryHandler>();
 builder.Services.AddScoped<CreateOrderDetailCommandHandler>();
 builder.Services.AddScoped<UpdateOrderDetailCommandHandler>();
-builder.Services.AddScoped<RemoveAddressCommandHandler>();
+builder.Services.AddScoped<RemoveOrderDetailCommandHandler>();
 #endregion
 
 builder.Services.AddControllers();
