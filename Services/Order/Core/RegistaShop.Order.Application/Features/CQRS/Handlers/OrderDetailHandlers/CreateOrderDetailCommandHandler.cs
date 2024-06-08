@@ -35,5 +35,6 @@ namespace RegistaShop.Order.Application.Features.CQRS.Handlers.OrderDetailHandle
 			});
 
 		}
+
 	}
 }
