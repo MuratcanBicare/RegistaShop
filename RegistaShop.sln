@@ -21,13 +21,23 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Infrastructure", "Infrastru
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Presentation", "Presentation", "{85BA7EE8-2A6C-490D-8416-A5CEF81368AF}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RegistaShop.Order.Domain", "Services\Order\Core\RegistaShop.Order.Domain\RegistaShop.Order.Domain.csproj", "{3CB1E068-D961-462B-84AC-50EBD548CBF2}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "RegistaShop.Order.Domain", "Services\Order\Core\RegistaShop.Order.Domain\RegistaShop.Order.Domain.csproj", "{3CB1E068-D961-462B-84AC-50EBD548CBF2}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RegistaShop.Order.Application", "Services\Order\Core\RegistaShop.Order.Application\RegistaShop.Order.Application.csproj", "{D3EF1708-28D3-4F2D-8726-87EB9221486A}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "RegistaShop.Order.Application", "Services\Order\Core\RegistaShop.Order.Application\RegistaShop.Order.Application.csproj", "{D3EF1708-28D3-4F2D-8726-87EB9221486A}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RegistaShop.Order.Persistence", "Services\Order\Infrastructure\RegistaShop.Order.Persistence\RegistaShop.Order.Persistence.csproj", "{0734A060-B7DA-4260-B1DB-8493A53097B9}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "RegistaShop.Order.Persistence", "Services\Order\Infrastructure\RegistaShop.Order.Persistence\RegistaShop.Order.Persistence.csproj", "{0734A060-B7DA-4260-B1DB-8493A53097B9}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RegistaShop.Order.WebApi", "Services\Order\Presentation\RegistaShop.Order.WebApi\RegistaShop.Order.WebApi.csproj", "{8A128586-B688-4092-942D-ECE7DC463435}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "RegistaShop.Order.WebApi", "Services\Order\Presentation\RegistaShop.Order.WebApi\RegistaShop.Order.WebApi.csproj", "{8A128586-B688-4092-942D-ECE7DC463435}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "IdentityServer", "IdentityServer", "{F4ED326A-E4FF-4579-9B31-BC803B1111A6}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "RegistaShop.IdentityServer", "IdentityServer\RegistaShop.IdentityServer\RegistaShop.IdentityServer.csproj", "{64F488B4-2B89-4371-A29F-4D1BE5AFC929}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Requirements", "Requirements", "{FA6BA230-A8DE-484A-9592-83711CFFF9E9}"
+	ProjectSection(SolutionItems) = preProject
+		IdentityServerVersionErrorSolution.txt = IdentityServerVersionErrorSolution.txt
+		PortainerCmd.txt = PortainerCmd.txt
+	EndProjectSection
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -59,6 +69,10 @@ Global
 		{8A128586-B688-4092-942D-ECE7DC463435}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{8A128586-B688-4092-942D-ECE7DC463435}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{8A128586-B688-4092-942D-ECE7DC463435}.Release|Any CPU.Build.0 = Release|Any CPU
+		{64F488B4-2B89-4371-A29F-4D1BE5AFC929}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{64F488B4-2B89-4371-A29F-4D1BE5AFC929}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{64F488B4-2B89-4371-A29F-4D1BE5AFC929}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{64F488B4-2B89-4371-A29F-4D1BE5AFC929}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -76,6 +90,7 @@ Global
 		{D3EF1708-28D3-4F2D-8726-87EB9221486A} = {7DAF6C48-EBA4-415B-916E-82A6DBD329DF}
 		{0734A060-B7DA-4260-B1DB-8493A53097B9} = {9027296A-34CC-4D2C-96D8-D9A3496D2B84}
 		{8A128586-B688-4092-942D-ECE7DC463435} = {85BA7EE8-2A6C-490D-8416-A5CEF81368AF}
+		{64F488B4-2B89-4371-A29F-4D1BE5AFC929} = {F4ED326A-E4FF-4579-9B31-BC803B1111A6}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {675EF04C-D393-48AE-8802-652C261C6055}
