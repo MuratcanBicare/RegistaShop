@@ -1,3 +1,4 @@
+using Microsoft.AspNetCore.Authentication.JwtBearer;
 using RegistaShop.Order.Application.Features.CQRS.Handlers.AddressHandlers;
 using RegistaShop.Order.Application.Features.CQRS.Handlers.OrderDetailHandlers;
 using RegistaShop.Order.Application.Interfaces;
@@ -6,6 +7,13 @@ using RegistaShop.Order.Persistence.Context;
 using RegistaShop.Order.Persistence.Repositories;
 
 var builder = WebApplication.CreateBuilder(args);
+
+builder.Services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme).AddJwtBearer(opt =>
+{
+	opt.Authority = builder.Configuration["IdentityServerUrl"];
+	opt.Audience = "ResourceOrder";
+	opt.RequireHttpsMetadata = false;
+});
 
 builder.Services.AddDbContext<OrderContext>();
 
@@ -43,6 +51,7 @@ if (app.Environment.IsDevelopment())
 
 app.UseHttpsRedirection();
 
+app.UseAuthentication();
 app.UseAuthorization();
 
 app.MapControllers();

@@ -6,7 +6,7 @@ using RegistaShop.Order.Application.Features.CQRS.Queries.AddressQueries;
 
 namespace RegistaShop.Order.WebApi.Controllers
 {
-	public class AdressesController : ApiBaseController
+	public class AddressesController : ApiBaseController
 	{
 
 		private readonly GetAddressQueryHandler _getAddressQueryHandler;
@@ -15,7 +15,7 @@ namespace RegistaShop.Order.WebApi.Controllers
 		private readonly UpdateAddressCommandHandler _updateAddressCommandHandler;
 		private readonly RemoveAddressCommandHandler _removeAddressCommandHandler;
 
-		public AdressesController(GetAddressQueryHandler getAddressQueryHandler, GetAddressByIdQueryHandler getAddressByIdQueryHandler, CreateAddressCommandHandler createAddressCommandHandler, UpdateAddressCommandHandler updateAddressCommandHandler, RemoveAddressCommandHandler removeAddressCommandHandler)
+		public AddressesController(GetAddressQueryHandler getAddressQueryHandler, GetAddressByIdQueryHandler getAddressByIdQueryHandler, CreateAddressCommandHandler createAddressCommandHandler, UpdateAddressCommandHandler updateAddressCommandHandler, RemoveAddressCommandHandler removeAddressCommandHandler)
 		{
 			_getAddressQueryHandler = getAddressQueryHandler;
 			_getAddressByIdQueryHandler = getAddressByIdQueryHandler;

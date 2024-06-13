@@ -1,11 +1,12 @@
-﻿using Microsoft.AspNetCore.Http;
+﻿using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using RegistaShop.Catalog.Dtos.ProductDtos;
 using RegistaShop.Catalog.Services.ProductServices;
 
 namespace RegistaShop.Catalog.Controllers
 {
-
+	[Authorize]
 	public class ProductsController : ApiBaseController
 	{
 

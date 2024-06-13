@@ -1,11 +1,12 @@
-﻿using Microsoft.AspNetCore.Http;
+﻿using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using RegistaShop.Catalog.Dtos.CategoryDtos;
 using RegistaShop.Catalog.Services.CategoryServices;
 
 namespace RegistaShop.Catalog.Controllers
 {
-	
+	[Authorize]
 	public class CategoriesController : ApiBaseController
 	{
 
