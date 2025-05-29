@@ -22,10 +22,10 @@ namespace RegistaShop.Order.Application.Features.CQRS.Handlers.AddressHandlers
 		
 		}
 
-		public async Task<GetAddressGetByIdQueryResult> Handle(GetAddressByIdQuery query)
+		public async Task<GetAddressByIdQueryResult> Handle(GetAddressByIdQuery query)
 		{
 			var values = await _reposiyory.GetByIdAsync(query.Id);
-			return new GetAddressGetByIdQueryResult
+			return new GetAddressByIdQueryResult
 			{
 				AddressId = values.AddressId,
 				City = values.City,

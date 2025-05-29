@@ -53,7 +53,7 @@ namespace RegistaShop.Order.WebApi.Controllers
 		public async Task<IActionResult> UpdateDetailOrder(UpdateOrderDetailCommand command)
 		{
 			await _updateOrderDetailCommandHandler.Handle(command);
-			return Ok("Sipariş detayı başarılı bir şekilde güncellendi");
+			return Ok("Sipariş detayı başarılı bir şekilde güncellendi.");
 		}
 
 		[HttpDelete]

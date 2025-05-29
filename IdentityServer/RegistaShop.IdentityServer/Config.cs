@@ -22,15 +22,15 @@ namespace RegistaShop.IdentityServer
 		public static IEnumerable<IdentityResource> IdentityResources => new IdentityResource[]
 		{
 			new IdentityResources.OpenId(),
-			new IdentityResources.Email(),
-			new IdentityResources.Profile()
+			new IdentityResources.Profile(),
+			new IdentityResources.Email()
 		};
 
 		public static IEnumerable<ApiScope> ApiScopes => new ApiScope[]
 		{
 			new ApiScope("CatalogFullPermission","Full authority for catalog operations"),
 			new ApiScope("CatalogReadPermission","Reading authority for catalog operations"),
-			new ApiScope("DiscountFullPermission","Full authority for discount operation"),
+			new ApiScope("DiscountFullPermission","Full authority for discount operations"),
 			new ApiScope("OrderFullPermission","Full authority for order operations"),
 			new ApiScope(IdentityServerConstants.LocalApi.ScopeName)
 		};
@@ -42,10 +42,10 @@ namespace RegistaShop.IdentityServer
 			new Client
 			{
 				ClientId = "RegistaShopVisitorId",
-				ClientName = "RegistaShop Visitor User",
+				ClientName = "Regista Shop Visitor User",
 				AllowedGrantTypes = GrantTypes.ClientCredentials,
 				ClientSecrets = {new Secret("registashopsecret".Sha256()) },
-				AllowedScopes = { "DiscountFullPermission" }
+				AllowedScopes = { "CatalogReadPermission" }
 			},
 
 			//Manager

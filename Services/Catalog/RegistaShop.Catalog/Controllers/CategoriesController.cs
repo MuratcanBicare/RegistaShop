@@ -48,7 +48,7 @@ namespace RegistaShop.Catalog.Controllers
 		public async Task<IActionResult> DeleteCategory(string id)
 		{
 			await _categoryService.DeleteCategoryAsync(id);
-			return Ok("Kategori başarıyla silindi");
+			return Ok("Kategori başarıyla silindi.");
 		}
 
 		[HttpPut]

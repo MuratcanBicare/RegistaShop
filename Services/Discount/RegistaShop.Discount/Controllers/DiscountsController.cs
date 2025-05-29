@@ -48,7 +48,7 @@ namespace RegistaShop.Discount.Controllers
 		{
 
 			await _discountService.DeleteDiscountCouponAysnc(id);
-			return Ok("İndirim Kuponu başarıyla silindi");
+			return Ok("İndirim Kuponu başarıyla silindi.");
 
 		}
 

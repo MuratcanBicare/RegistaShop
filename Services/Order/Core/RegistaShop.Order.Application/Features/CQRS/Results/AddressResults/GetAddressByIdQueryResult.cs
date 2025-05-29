@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace RegistaShop.Order.Application.Features.CQRS.Results.AddressResults
 {
-	public  class GetAddressGetByIdQueryResult
+	public  class GetAddressByIdQueryResult
 	{
 		public int AddressId { get; set; }
 		public string UserId { get; set; }
