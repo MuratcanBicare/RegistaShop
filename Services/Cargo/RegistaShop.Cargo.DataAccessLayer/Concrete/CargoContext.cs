@@ -13,7 +13,7 @@ namespace RegistaShop.Cargo.DataAccessLayer.Concrete
 
 		override protected void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
 		{
-			optionsBuilder.UseSqlServer("Server=localhost,1441;initial Catalog=RegistaShopCargoDB;User=sa;Password=123456aA*;");
+			optionsBuilder.UseSqlServer("Server=localhost,1441;initial Catalog=RegistaShopCargoDb;User=sa;Password=123456aA*;");
 		}
 
 		public DbSet<CargoCompany> CargoCompanies { get; set; }

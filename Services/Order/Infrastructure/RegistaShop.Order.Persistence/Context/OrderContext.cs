@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace RegistaShop.Order.Persistence.Context
 {
-	public  class OrderContext : DbContext
+	public class OrderContext : DbContext
 	{
 		protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
 		{
@@ -18,7 +18,8 @@ namespace RegistaShop.Order.Persistence.Context
 		}
 
 		public DbSet<Address> Addresses { get; set; }
-        public DbSet<OrderDetail> OrderDetails { get; set; }
-        public DbSet<Ordering> Orderings { get; set; }
-    }
+		public DbSet<OrderDetail> OrderDetails { get; set; }
+		public DbSet<Ordering> Orderings { get; set; }
+
+	}
 }

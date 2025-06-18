@@ -25,8 +25,4 @@
     <ProjectReference Include="..\RegistaShop.Cargo.EntityLayer\RegistaShop.Cargo.EntityLayer.csproj" />
   </ItemGroup>
 
-  <ItemGroup>
-    <Folder Include="Controllers\" />
-  </ItemGroup>
-
 </Project>
