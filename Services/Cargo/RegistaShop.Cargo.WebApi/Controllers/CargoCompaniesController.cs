@@ -7,12 +7,12 @@ using RegistaShop.Cargo.EntityLayer.Concrete;
 namespace RegistaShop.Cargo.WebApi.Controllers
 {
 
-	public class CargoCompanyController : ApiBaseController
+	public class CargoCompaniesController : ApiBaseController
 	{
 
 		private readonly ICargoCompanyService _cargoCompanyService;
 
-		public CargoCompanyController(ICargoCompanyService cargoCompanyService)
+		public CargoCompaniesController(ICargoCompanyService cargoCompanyService)
 		{
 			_cargoCompanyService = cargoCompanyService;
 		}
