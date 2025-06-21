@@ -52,6 +52,10 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RegistaShop.Cargo.DtoLayer"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RegistaShop.Cargo.WebApi", "Services\Cargo\RegistaShop.Cargo.WebApi\RegistaShop.Cargo.WebApi.csproj", "{EACBA7F8-75F3-47A4-8593-539057532EEC}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Basket", "Basket", "{F1A6EE43-2615-4D87-A682-4863D85062F5}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RegistaShop.Basket", "Services\Basket\RegistaShop.Basket\RegistaShop.Basket.csproj", "{7CD29A67-2555-458C-82E7-4FEF91967C5D}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -106,6 +110,10 @@ Global
 		{EACBA7F8-75F3-47A4-8593-539057532EEC}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{EACBA7F8-75F3-47A4-8593-539057532EEC}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{EACBA7F8-75F3-47A4-8593-539057532EEC}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7CD29A67-2555-458C-82E7-4FEF91967C5D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7CD29A67-2555-458C-82E7-4FEF91967C5D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7CD29A67-2555-458C-82E7-4FEF91967C5D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7CD29A67-2555-458C-82E7-4FEF91967C5D}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -130,6 +138,8 @@ Global
 		{F0662519-1271-4CED-99FA-32472E3F8707} = {02EA681E-C7D8-13C7-8484-4AC65E1B71E8}
 		{0C2ADBB3-1E4B-4F4C-8AFD-971F77CF2434} = {02EA681E-C7D8-13C7-8484-4AC65E1B71E8}
 		{EACBA7F8-75F3-47A4-8593-539057532EEC} = {02EA681E-C7D8-13C7-8484-4AC65E1B71E8}
+		{F1A6EE43-2615-4D87-A682-4863D85062F5} = {BE891192-A70E-4DFE-B2AD-D0C380959801}
+		{7CD29A67-2555-458C-82E7-4FEF91967C5D} = {F1A6EE43-2615-4D87-A682-4863D85062F5}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {675EF04C-D393-48AE-8802-652C261C6055}
