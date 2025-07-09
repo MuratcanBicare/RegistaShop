@@ -28,4 +28,8 @@
     <Folder Include="Areas\Admin\Models\" />
   </ItemGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\RegistaShop.DtoLayer\RegistaShop.DtoLayer.csproj" />
+  </ItemGroup>
+
 </Project>
