@@ -15,5 +15,7 @@ namespace RegistaShop.Catalog.Services.ProductServices
 
 		Task<GetByIdProductDto> GetByIdProductAsync(string id);
 
+		Task<List<ResultProductsWithCategoryDto>> GetProductsWithCategoryAsync();
+
 	}
 }
