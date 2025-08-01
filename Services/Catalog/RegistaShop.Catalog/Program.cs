@@ -5,6 +5,7 @@ using RegistaShop.Catalog.Services.FeatureSliderServices;
 using RegistaShop.Catalog.Services.ProductDetailServices;
 using RegistaShop.Catalog.Services.ProductImageServices;
 using RegistaShop.Catalog.Services.ProductServices;
+using RegistaShop.Catalog.Services.SpecialOfferServices;
 using RegistaShop.Catalog.Settings;
 using System.Reflection;
 
@@ -23,6 +24,7 @@ builder.Services.AddScoped<IProductService, ProductService>();
 builder.Services.AddScoped<IProductDetailService, ProductDetailService>();
 builder.Services.AddScoped<IProductImageService, ProductImageService>();
 builder.Services.AddScoped<IFeatureSliderService, FeatureSliderService>();
+builder.Services.AddScoped<ISpecialOfferService, SpecialOfferService>();
 
 builder.Services.AddAutoMapper(Assembly.GetExecutingAssembly());
 

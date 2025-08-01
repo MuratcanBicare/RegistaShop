@@ -4,6 +4,7 @@ using RegistaShop.Catalog.Dtos.FeatureSliderDtos;
 using RegistaShop.Catalog.Dtos.ProductDetailDtos;
 using RegistaShop.Catalog.Dtos.ProductDtos;
 using RegistaShop.Catalog.Dtos.ProductImageDtos;
+using RegistaShop.Catalog.Dtos.SpecialOfferDtos;
 using RegistaShop.Catalog.Entities;
 
 namespace RegistaShop.Catalog.Mapping
@@ -40,6 +41,11 @@ namespace RegistaShop.Catalog.Mapping
 			CreateMap<FeatureSlider, CreateFeatureSliderDto>().ReverseMap();
 			CreateMap<FeatureSlider, UpdateFeatureSliderDto>().ReverseMap();
 			CreateMap<FeatureSlider, GetByIdFeatureSliderDto>().ReverseMap();
+
+			CreateMap<SpecialOffer, ResultSpecialOfferDto>().ReverseMap();
+			CreateMap<SpecialOffer, CreateSpecialOfferDto>().ReverseMap();
+			CreateMap<SpecialOffer, UpdateSpecialOfferDto>().ReverseMap();
+			CreateMap<SpecialOffer, GetByIdSpecialOfferDto>().ReverseMap();
 
 		}
 
