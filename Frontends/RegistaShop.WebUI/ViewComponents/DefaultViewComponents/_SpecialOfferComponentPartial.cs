@@ -1,12 +1,33 @@
 ﻿using Microsoft.AspNetCore.Mvc;
+using Newtonsoft.Json;
+using RegistaShop.DtoLayer.CatalogDtos.SpecialOfferDtos;
 
 namespace RegistaShop.WebUI.ViewComponents.DefaultViewComponents
 {
 	public class _SpecialOfferComponentPartial : ViewComponent
 	{
-		public IViewComponentResult Invoke()
+
+		private readonly IHttpClientFactory _httpClientFactory;
+
+		public _SpecialOfferComponentPartial(IHttpClientFactory httpClientFactory)
 		{
+			_httpClientFactory = httpClientFactory;
+		}
+
+		public async Task<IViewComponentResult> InvokeAsync()
+		{
+			
+			var client = _httpClientFactory.CreateClient();
+			var responseMesage = await client.GetAsync("https://localhost:7245/api/SpecialOffers");
+			if (responseMesage.IsSuccessStatusCode)
+			{
+				var jsonData = await responseMesage.Content.ReadAsStringAsync();
+				var values = JsonConvert.DeserializeObject<List<ResultSpecialOfferDto>>(jsonData);
+				return View(values);
+			}
+
 			return View();
+		
 		}
 
 	}
