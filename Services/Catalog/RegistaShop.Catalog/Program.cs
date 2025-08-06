@@ -1,6 +1,7 @@
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.Extensions.Options;
 using RegistaShop.Catalog.Services.CategoryServices;
+using RegistaShop.Catalog.Services.FeatureServices;
 using RegistaShop.Catalog.Services.FeatureSliderServices;
 using RegistaShop.Catalog.Services.ProductDetailServices;
 using RegistaShop.Catalog.Services.ProductImageServices;
@@ -25,6 +26,7 @@ builder.Services.AddScoped<IProductDetailService, ProductDetailService>();
 builder.Services.AddScoped<IProductImageService, ProductImageService>();
 builder.Services.AddScoped<IFeatureSliderService, FeatureSliderService>();
 builder.Services.AddScoped<ISpecialOfferService, SpecialOfferService>();
+builder.Services.AddScoped<IFeatureService, FeatureService>();
 
 builder.Services.AddAutoMapper(Assembly.GetExecutingAssembly());
 

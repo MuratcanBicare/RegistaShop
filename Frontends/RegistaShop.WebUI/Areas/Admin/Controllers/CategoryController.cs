@@ -129,6 +129,5 @@ namespace RegistaShop.WebUI.Areas.Admin.Controllers
 			return View();
 
 		}
-
 	}
 }

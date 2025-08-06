@@ -10,7 +10,6 @@ namespace RegistaShop.Catalog.Services.CategoryServices
 	{
 
 		private readonly IMongoCollection<Category> _categoryCollection;
-
 		private readonly IMapper _mapper;
 
 		public CategoryService(IMapper mapper, IDatabaseSettings _databaseSettings)
