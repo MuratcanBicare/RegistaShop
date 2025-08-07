@@ -2,5 +2,6 @@
 {
 	public record UpdateCategoryDto(
 		string CategoryId,
-		string CategoryName);
+		string CategoryName,
+		string ImageUrl);
 }

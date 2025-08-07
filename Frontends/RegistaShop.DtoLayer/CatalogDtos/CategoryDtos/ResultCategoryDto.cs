@@ -8,6 +8,7 @@ namespace RegistaShop.DtoLayer.CatalogDtos.CategoryDtos
 {
 	public record ResultCategoryDto(
 		string CategoryID,
-		string CategoryName);
+		string CategoryName,
+		string ImageUrl);
 	
 }

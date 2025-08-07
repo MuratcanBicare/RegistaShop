@@ -2,5 +2,6 @@
 {
 	public record GetByIdCategoryDto(
 		string CategoryId,
-		string CategoryName);
+		string CategoryName,
+		string ImageUrl);
 }

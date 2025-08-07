@@ -2,5 +2,6 @@
 {
 	public record ResultCategoryDto(
 		string CategoryId,
-		string CategoryName);
+		string CategoryName,
+		string ImageUrl);
 }

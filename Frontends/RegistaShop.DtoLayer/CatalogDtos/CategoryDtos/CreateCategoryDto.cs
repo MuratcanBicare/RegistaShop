@@ -7,6 +7,7 @@ using System.Threading.Tasks;
 namespace RegistaShop.DtoLayer.CatalogDtos.CategoryDtos
 {
 	public record CreateCategoryDto(
-		string CategoryName);
+		string CategoryName,
+		string ImageUrl);
 
 }
