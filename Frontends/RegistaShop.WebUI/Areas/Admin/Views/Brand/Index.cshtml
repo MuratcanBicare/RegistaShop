@@ -1,8 +1,8 @@
-﻿@model List<ResultSpecialOfferDto>
-
+﻿@model List<ResultBrandDto>
 @{
     ViewData["Title"] = "Index";
     Layout = "~/Areas/Admin/Views/AdminLayout/Index.cshtml";
+	int count = 0;
 }
 
 <section class="content container-fluid">
@@ -13,8 +13,9 @@
 					<table class="table table-bordered">
 						<thead>
 							<tr>
-								<th>Teklif Başlığı</th>
-								<th>Teklif Alt Başlığı</th>
+								<th>#</th>
+								<th>Marka Adı</th>
+								<th>Marka Görsel</th>
 								<th>Sil</th>
 								<th>Güncelle</th>
 							</tr>
@@ -22,16 +23,18 @@
 						<tbody>
 							@foreach (var item in Model)
 							{
+								count++;
 								<tr>
-									<td scope="row">@item.Title</td>
-									<td>@item.SubTitle</td>
-									<td><a href="/Admin/SpecialOffer/DeleteSpecialOffer/@item.SpecialOfferId" class="btn btn-danger">Sil</a></td>
-									<td><a href="/Admin/SpecialOffer/UpdateSpecialOffer/@item.SpecialOfferId" class="btn btn-success">Güncelle</a></td>
+									<th scope="row">@count</th>
+									<td>@item.BrandName</td>
+									<td><img src="@item.ImageUrl" style="width:50px; height:50px;" /></td>
+									<td><a href="/Admin/Brand/DeleteBrand/@item.BrandId" class="btn btn-danger">Sil</a></td>
+									<td><a href="/Admin/Brand/UpdateBrand/@item.BrandId" class="btn btn-success">Güncelle</a></td>
 								</tr>
 							}
 						</tbody>
 					</table>
-					<a href="/Admin/SpecialOffer/CreateSpecialOffer/" class="btn btn-primary">Yeni Teklif Girişi</a>
+					<a href="/Admin/Brand/CreateBrand" class="btn btn-primary">Yeni Marka Girişi</a>
 				</div>
 			</div>
 		</div>
