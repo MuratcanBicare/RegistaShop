@@ -71,5 +71,14 @@ namespace RegistaShop.Catalog.Controllers
 
 		}
 
+		[HttpGet("ProductListWithCategoryByCategoryId")]
+		public async Task<IActionResult> ProductListWithCategoryByCategoryId(string id)
+		{
+
+			var values = await _productService.GetProductsWithCategoryIdAsync(id);
+			return Ok(values);
+		
+		}
+
 	}
 }
