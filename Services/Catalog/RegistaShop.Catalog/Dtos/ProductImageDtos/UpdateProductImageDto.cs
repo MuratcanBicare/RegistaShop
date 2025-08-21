@@ -2,8 +2,6 @@
 {
 	public record UpdateProductImageDto(
 		string ProductImageId,
-		string Image1,
-		string Image2,
-		string Image3,
+		List<string> ProductImageList,
 		string ProductId);
 }
