@@ -33,9 +33,9 @@
 				</div>
 				<div class="tab-content">
 
-					@await Component.InvokeAsync("_ProductDetailDescriptionComponentPartial")
+					@await Component.InvokeAsync("_ProductDetailDescriptionComponentPartial" , new { id = ViewBag.x})
 
-					@await Component.InvokeAsync("_ProductDetailInformartionComponenPartial")
+					@await Component.InvokeAsync("_ProductDetailInformartionComponenPartial", new { id = ViewBag.x})
 
 					@await Component.InvokeAsync("_ProductDetailReviewComponentPartial")
 
