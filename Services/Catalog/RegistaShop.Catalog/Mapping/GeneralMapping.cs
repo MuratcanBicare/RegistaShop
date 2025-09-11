@@ -2,6 +2,7 @@
 using RegistaShop.Catalog.Dtos.AboutDtos;
 using RegistaShop.Catalog.Dtos.BrandDtos;
 using RegistaShop.Catalog.Dtos.CategoryDtos;
+using RegistaShop.Catalog.Dtos.ContactDtos;
 using RegistaShop.Catalog.Dtos.FeatureDtos;
 using RegistaShop.Catalog.Dtos.FeatureSliderDtos;
 using RegistaShop.Catalog.Dtos.OfferDiscountDtos;
@@ -70,6 +71,11 @@ namespace RegistaShop.Catalog.Mapping
 			CreateMap<About, CreateAboutDto>().ReverseMap();
 			CreateMap<About, UpdateAboutDto>().ReverseMap();
 			CreateMap<About, GetByIdAboutDto>().ReverseMap();
+
+			CreateMap<Contact, ResultContactDto>().ReverseMap();
+			CreateMap<Contact, CreateContactDto>().ReverseMap();
+			CreateMap<Contact, UpdateContactDto>().ReverseMap();
+			CreateMap<Contact, GetByIdContactDto>().ReverseMap();
 
 		}
 

@@ -3,6 +3,7 @@ using Microsoft.Extensions.Options;
 using RegistaShop.Catalog.Services.AboutServices;
 using RegistaShop.Catalog.Services.BrandServices;
 using RegistaShop.Catalog.Services.CategoryServices;
+using RegistaShop.Catalog.Services.ContactServices;
 using RegistaShop.Catalog.Services.FeatureServices;
 using RegistaShop.Catalog.Services.FeatureSliderServices;
 using RegistaShop.Catalog.Services.OfferDiscountServices;
@@ -33,6 +34,7 @@ builder.Services.AddScoped<IFeatureService, FeatureService>();
 builder.Services.AddScoped<IOfferDiscountService, OfferDiscountService>();
 builder.Services.AddScoped<IBrandService, BrandService>();
 builder.Services.AddScoped<IAboutService, AboutService>();
+builder.Services.AddScoped<IContactService, ContactService>();
 
 builder.Services.AddAutoMapper(Assembly.GetExecutingAssembly());
 
