@@ -6,7 +6,6 @@ using RegistaShop.Catalog.Services.BrandServices;
 
 namespace RegistaShop.Catalog.Controllers
 {
-	[AllowAnonymous]
 	public class BrandsController : ApiBaseController
 	{
 		private readonly IBrandService _brandService;

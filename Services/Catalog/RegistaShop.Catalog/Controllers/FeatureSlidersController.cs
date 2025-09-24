@@ -6,8 +6,6 @@ using RegistaShop.Catalog.Services.FeatureSliderServices;
 
 namespace RegistaShop.Catalog.Controllers
 {
-
-	[AllowAnonymous]
 	public class FeatureSlidersController : ApiBaseController
 	{
 

@@ -49,7 +49,7 @@ namespace RegistaShop.IdentityServer
 				ClientName = "Regista Shop Visitor User",
 				AllowedGrantTypes = GrantTypes.ClientCredentials,
 				ClientSecrets = {new Secret("registashopsecret".Sha256()) },
-				AllowedScopes = { "CatalogReadPermission" }
+				AllowedScopes = { "CatalogReadPermission", "CatalogFullPermission" }
 			},
 
 			//Manager
@@ -59,7 +59,7 @@ namespace RegistaShop.IdentityServer
 				ClientName = "Regista Shop Manager User",
 				AllowedGrantTypes = GrantTypes.ResourceOwnerPassword,
 				ClientSecrets = { new Secret("registashopsecret".Sha256()) },
-				AllowedScopes = { "CatalogReadPermission", "CatalogFullPermission"}
+				AllowedScopes = { "CatalogReadPermission", "CatalogFullPermission", "BasketFullPermission" }
 			},
 
 			//Admin

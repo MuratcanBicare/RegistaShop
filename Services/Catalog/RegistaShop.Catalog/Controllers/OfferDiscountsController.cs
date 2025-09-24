@@ -6,7 +6,6 @@ using RegistaShop.Catalog.Services.OfferDiscountServices;
 
 namespace RegistaShop.Catalog.Controllers
 {
-	[AllowAnonymous]
 	public class OfferDiscountsController : ApiBaseController
 	{
 		private readonly IOfferDiscountService _offerDiscountService;

@@ -1,5 +1,9 @@
+using Microsoft.AspNetCore.Authentication.Cookies;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using RegistaShop.WebUI.Services;
+using RegistaShop.WebUI.Services.Concrete;
+using RegistaShop.WebUI.Services.Interfaces;
+using RegistaShop.WebUI.Settings;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -15,13 +19,23 @@ builder.Services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme).AddCo
 	opt.Cookie.Name = "RegistaShopJwt";
 });
 
+builder.Services.AddAuthentication(CookieAuthenticationDefaults.AuthenticationScheme).AddCookie(CookieAuthenticationDefaults.AuthenticationScheme, opt =>
+{
+	opt.LoginPath = "/Login/Index";
+	opt.ExpireTimeSpan = TimeSpan.FromDays(5);
+	opt.Cookie.Name = "RegistaShopCookie";
+	opt.SlidingExpiration = true;
+});
+
 builder.Services.AddHttpContextAccessor();
 
 builder.Services.AddScoped<ILoginService, LoginService>();
+builder.Services.AddHttpClient<IIdentityService, IdentityService>();
 
 builder.Services.AddHttpClient();
-
 builder.Services.AddControllersWithViews();
+
+builder.Services.Configure<ClientSettings>(builder.Configuration.GetSection("ClientSettings"));
 
 var app = builder.Build();
 

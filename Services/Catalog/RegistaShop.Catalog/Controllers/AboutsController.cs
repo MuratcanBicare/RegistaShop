@@ -6,7 +6,6 @@ using RegistaShop.Catalog.Services.AboutServices;
 
 namespace RegistaShop.Catalog.Controllers
 {
-	[AllowAnonymous]
 	public class AboutsController : ApiBaseController
 	{
 		

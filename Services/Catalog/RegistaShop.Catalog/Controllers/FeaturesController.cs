@@ -6,8 +6,6 @@ using RegistaShop.Catalog.Services.FeatureServices;
 
 namespace RegistaShop.Catalog.Controllers
 {
-
-	[AllowAnonymous]
 	public class FeaturesController : ApiBaseController
 	{
 
