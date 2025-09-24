@@ -4,17 +4,17 @@
     "windowsAuthentication": false,
     "anonymousAuthentication": true,
     "iisExpress": {
-      "applicationUrl": "http://localhost:61170",
-      "sslPort": 44372
+      "applicationUrl": "http://localhost:63606",
+      "sslPort": 44309
     }
   },
   "profiles": {
-    "RegistaShop.Discount": {
+    "RegistaShop.Payment": {
       "commandName": "Project",
       "dotnetRunMessages": true,
       "launchBrowser": false,
       "launchUrl": "swagger",
-      "applicationUrl": "http://localhost:7246;",
+      "applicationUrl": "http://localhost:7251",
       "environmentVariables": {
         "ASPNETCORE_ENVIRONMENT": "Development"
       }

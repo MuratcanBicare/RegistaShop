@@ -18,6 +18,10 @@ namespace RegistaShop.IdentityServer
 			new ApiResource("ResourceOrder"){Scopes = {"OrderFullPermission"} },
 			new ApiResource("ResourceCargo"){Scopes = {"CargoFullPermission"} },
 			new ApiResource("ResourceBasket"){Scopes = {"BasketFullPermission"} },
+			new ApiResource("ResourceComment"){Scopes = {"CommentFullPermission"} },
+			new ApiResource("ResourcePayment"){Scopes = {"PaymentFullPermission"} },
+			new ApiResource("ResourceImage"){Scopes = { "ImageFullPermission" } },
+			new ApiResource("ResourceOcelot"){Scopes = {"OcelotFullPermission"} },
 			new ApiResource(IdentityServerConstants.LocalApi.ScopeName)
 		};
 
@@ -36,6 +40,10 @@ namespace RegistaShop.IdentityServer
 			new ApiScope("OrderFullPermission","Full authority for order operations"),
 			new ApiScope("CargoFullPermission","Full authority for cargo operations"),
 			new ApiScope("BasketFullPermission","Full authority for basket operations"),
+			new ApiScope("CommentFullPermission","Full authority for comment operations"),
+			new ApiScope("PaymentFullPermission","Full authority for payment operations"),
+			new ApiScope("ImageFullPermission","Full authority for image operations"),
+			new ApiScope("OcelotFullPermission","Full authority for ocelot operations"),
 			new ApiScope(IdentityServerConstants.LocalApi.ScopeName)
 		};
 
@@ -49,7 +57,7 @@ namespace RegistaShop.IdentityServer
 				ClientName = "Regista Shop Visitor User",
 				AllowedGrantTypes = GrantTypes.ClientCredentials,
 				ClientSecrets = {new Secret("registashopsecret".Sha256()) },
-				AllowedScopes = { "CatalogReadPermission", "CatalogFullPermission" }
+				AllowedScopes = { "CatalogReadPermission", "CatalogFullPermission", "CommentFullPermission", "ImageFullPermission", "OcelotFullPermission" }
 			},
 
 			//Manager
@@ -59,7 +67,7 @@ namespace RegistaShop.IdentityServer
 				ClientName = "Regista Shop Manager User",
 				AllowedGrantTypes = GrantTypes.ResourceOwnerPassword,
 				ClientSecrets = { new Secret("registashopsecret".Sha256()) },
-				AllowedScopes = { "CatalogReadPermission", "CatalogFullPermission", "BasketFullPermission" }
+				AllowedScopes = { "CatalogReadPermission", "CatalogFullPermission", "BasketFullPermission", "CommentFullPermission", "PaymentFullPermission", "ImageFullPermission", "OcelotFullPermission" }
 			},
 
 			//Admin
@@ -69,7 +77,7 @@ namespace RegistaShop.IdentityServer
 				ClientName = "Regista Shop Admin User",
 				AllowedGrantTypes = GrantTypes.ResourceOwnerPassword,
 				ClientSecrets = { new Secret("registashopsecret".Sha256()) },
-				AllowedScopes = { "CatalogFullPermission", "CatalogReadPermission", "DiscountFullPermission", "OrderFullPermission", "CargoFullPermission", "BasketFullPermission", IdentityServerConstants.LocalApi.ScopeName, IdentityServerConstants.StandardScopes.Email, IdentityServerConstants.StandardScopes.OpenId, IdentityServerConstants.StandardScopes.Profile},
+				AllowedScopes = { "CatalogFullPermission", "CatalogReadPermission", "DiscountFullPermission", "OrderFullPermission", "CargoFullPermission", "BasketFullPermission", "CommentFullPermission", "PaymentFullPermission", "ImageFullPermission", "OcelotFullPermission", IdentityServerConstants.LocalApi.ScopeName, IdentityServerConstants.StandardScopes.Email, IdentityServerConstants.StandardScopes.OpenId, IdentityServerConstants.StandardScopes.Profile},
 				AccessTokenLifetime = 600
 			}
 		};
