@@ -1,6 +1,7 @@
-﻿using System.Security.Claims;
+﻿using RegistaShop.WebUI.Services.Interfaces;
+using System.Security.Claims;
 
-namespace RegistaShop.WebUI.Services
+namespace RegistaShop.WebUI.Services.Concrete
 {
 	public class LoginService : ILoginService
 	{

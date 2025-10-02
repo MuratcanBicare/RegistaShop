@@ -67,7 +67,7 @@ namespace RegistaShop.IdentityServer
 				ClientName = "Regista Shop Manager User",
 				AllowedGrantTypes = GrantTypes.ResourceOwnerPassword,
 				ClientSecrets = { new Secret("registashopsecret".Sha256()) },
-				AllowedScopes = { "CatalogReadPermission", "CatalogFullPermission", "BasketFullPermission", "CommentFullPermission", "PaymentFullPermission", "ImageFullPermission", "OcelotFullPermission" }
+				AllowedScopes = { "CatalogReadPermission", "CatalogFullPermission", "BasketFullPermission", "CommentFullPermission", "PaymentFullPermission", "ImageFullPermission", "OcelotFullPermission", IdentityServerConstants.LocalApi.ScopeName, IdentityServerConstants.StandardScopes.Email, IdentityServerConstants.StandardScopes.OpenId, IdentityServerConstants.StandardScopes.Profile }
 			},
 
 			//Admin

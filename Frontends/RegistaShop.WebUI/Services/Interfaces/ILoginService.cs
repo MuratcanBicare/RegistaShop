@@ -1,4 +1,4 @@
-﻿namespace RegistaShop.WebUI.Services
+﻿namespace RegistaShop.WebUI.Services.Interfaces
 {
 	public interface ILoginService
 	{

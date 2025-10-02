@@ -2,6 +2,7 @@
 using Newtonsoft.Json;
 using Newtonsoft.Json.Linq;
 using RegistaShop.DtoLayer.CatalogDtos.CategoryDtos;
+using RegistaShop.WebUI.Services.CatalogServices.CategoryServices;
 using System.Net.Http.Headers;
 using System.Threading.Tasks;
 
@@ -11,10 +12,12 @@ namespace RegistaShop.WebUI.Controllers
 	{
 
 		private readonly IHttpClientFactory _httpClientFactory;
+		private readonly ICategoryService _categoryService;
 
-		public TestController(IHttpClientFactory httpClientFactory)
+		public TestController(IHttpClientFactory httpClientFactory, ICategoryService categoryService)
 		{
 			_httpClientFactory = httpClientFactory;
+			_categoryService = categoryService;
 		}
 
 		public async Task<IActionResult> Index()
@@ -48,7 +51,7 @@ namespace RegistaShop.WebUI.Controllers
 			var client = _httpClientFactory.CreateClient();
 			client.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Bearer", token);
 
-			var responseMessage = await client.GetAsync("https://localhost:7245/api/Categories");
+			var responseMessage = await client.GetAsync("http://localhost:7245/api/Categories");
 			if (responseMessage.IsSuccessStatusCode)
 			{
 
@@ -61,5 +64,12 @@ namespace RegistaShop.WebUI.Controllers
 
 			return View();
 		}
+	
+		public async Task<IActionResult> Deneme()
+		{
+			var values = await _categoryService.GetAllCategoryAsync();
+			return View(values);
+		}
+	
 	}
 }
