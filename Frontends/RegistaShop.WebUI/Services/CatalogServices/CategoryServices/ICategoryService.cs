@@ -6,10 +6,10 @@ namespace RegistaShop.WebUI.Services.CatalogServices.CategoryServices
 	{
 
 		Task<List<ResultCategoryDto>> GetAllCategoryAsync();
-		Task CreateCaregoryAsync(CreateCategoryDto createCategoryDto);
+		Task CreateCategoryAsync(CreateCategoryDto createCategoryDto);
 		Task UpdateCategoryAsync(UpdateCategoryDto updateCategoryDto);
 		Task DeleteCategoryAsync(string id);
-		Task<GetByIdCategoryDto> GetByIdCategoryAsync(string id);
+		Task<UpdateCategoryDto> GetByIdCategoryAsync(string id);
 
 	}
 }

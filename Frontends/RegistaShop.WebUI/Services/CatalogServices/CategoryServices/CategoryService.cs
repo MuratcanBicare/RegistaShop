@@ -1,4 +1,5 @@
-﻿using RegistaShop.DtoLayer.CatalogDtos.CategoryDtos;
+﻿using Newtonsoft.Json;
+using RegistaShop.DtoLayer.CatalogDtos.CategoryDtos;
 
 namespace RegistaShop.WebUI.Services.CatalogServices.CategoryServices
 {
@@ -12,7 +13,7 @@ namespace RegistaShop.WebUI.Services.CatalogServices.CategoryServices
 			_httpClient = httpClient;
 		}
 
-		public async Task CreateCaregoryAsync(CreateCategoryDto createCategoryDto)
+		public async Task CreateCategoryAsync(CreateCategoryDto createCategoryDto)
 		{
 			await _httpClient.PostAsJsonAsync<CreateCategoryDto>("categories", createCategoryDto);
 		}
@@ -25,14 +26,16 @@ namespace RegistaShop.WebUI.Services.CatalogServices.CategoryServices
 		public async Task<List<ResultCategoryDto>> GetAllCategoryAsync()
 		{
 			var responseMessage = await _httpClient.GetAsync("categories");
-			var values = await responseMessage.Content.ReadFromJsonAsync<List<ResultCategoryDto>>();
+			var jsonData = await responseMessage.Content.ReadAsStringAsync();
+			var values = JsonConvert.DeserializeObject<List<ResultCategoryDto>>(jsonData);
+			//var values = await responseMessage.Content.ReadFromJsonAsync<List<ResultCategoryDto>>();
 			return values;
 		}
 
-		public async Task<GetByIdCategoryDto> GetByIdCategoryAsync(string id)
+		public async Task<UpdateCategoryDto> GetByIdCategoryAsync(string id)
 		{
 			var responseMessage = await _httpClient.GetAsync($"categories/{id}");
-			var value = await responseMessage.Content.ReadFromJsonAsync<GetByIdCategoryDto>();
+			var value = await responseMessage.Content.ReadFromJsonAsync<UpdateCategoryDto>();
 			return value;
 		}
 

@@ -18,3 +18,4 @@ namespace RegistaShop.DtoLayer.CatalogDtos.ProductDtos
 		ResultCategoryDto Category);
 
 }
+
