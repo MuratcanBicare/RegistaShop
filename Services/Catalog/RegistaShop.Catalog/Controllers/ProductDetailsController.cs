@@ -34,7 +34,7 @@ namespace RegistaShop.Catalog.Controllers
 
 		}
 
-		[HttpGet("GetProductDetailByProductId")]
+		[HttpGet("GetProductDetailByProductId/{id}")]
 		public async Task<IActionResult> GetProductDetailByProductId(string id)
 		{
 

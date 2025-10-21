@@ -70,7 +70,7 @@ namespace RegistaShop.Catalog.Controllers
 
 		}
 
-		[HttpGet("ProductListWithCategoryByCategoryId")]
+		[HttpGet("ProductListWithCategoryByCategoryId/{id}")]
 		public async Task<IActionResult> ProductListWithCategoryByCategoryId(string id)
 		{
 

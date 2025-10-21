@@ -6,6 +6,9 @@ namespace RegistaShop.WebUI.Controllers
 	{
 		public IActionResult Index()
 		{
+			ViewBag.directory1 = "RegistaShop";
+			ViewBag.directory2 = "Anasayfa";
+			ViewBag.directory3 = "Ürün Listesi";
 			return View();
 		}
 	}

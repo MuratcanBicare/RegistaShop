@@ -1,34 +1,24 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using Newtonsoft.Json;
 using RegistaShop.DtoLayer.CatalogDtos.FeatureSliderDtos;
+using RegistaShop.WebUI.Services.CatalogServices.FeatureSliderServices;
 
 namespace RegistaShop.WebUI.ViewComponents.DefaultViewComponents
 {
 	public class _CarouselDefaultComponentPartial : ViewComponent
 	{
 
-		private readonly IHttpClientFactory _httpClientFactory;
+		private readonly IFeatureSliderService _featureSliderService;
 
-		public _CarouselDefaultComponentPartial(IHttpClientFactory httpClientFactory)
+		public _CarouselDefaultComponentPartial(IFeatureSliderService featureSliderService)
 		{
-			_httpClientFactory = httpClientFactory;
+			_featureSliderService = featureSliderService;
 		}
 
 		public async Task<IViewComponentResult> InvokeAsync()
 		{
-			
-			var client = _httpClientFactory.CreateClient();
-			var response = await client.GetAsync("https://localhost:7245/api/FeatureSliders");
-			if (response.IsSuccessStatusCode)
-			{
-				var jsonData = await response.Content.ReadAsStringAsync();
-				var values = JsonConvert.DeserializeObject<List<ResultFeatureSliderDto>>(jsonData);
-				return View(values);
-			}
-
-			return View();
-
+			var values = await _featureSliderService.GetAllFeatureSliderAsync();
+			return View(values);
 		}
-
 	}
 }
