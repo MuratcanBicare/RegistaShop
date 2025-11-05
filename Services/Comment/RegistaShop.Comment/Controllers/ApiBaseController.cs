@@ -4,9 +4,9 @@ using Microsoft.AspNetCore.Mvc;
 
 namespace RegistaShop.Comment.Controllers
 {
+	[Authorize]
 	[Route("api/[controller]")]
 	[ApiController]
-	[AllowAnonymous]
 	public class ApiBaseController : ControllerBase
 	{
 	}

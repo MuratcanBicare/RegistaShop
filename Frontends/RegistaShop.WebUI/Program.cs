@@ -4,6 +4,7 @@ using RegistaShop.WebUI.Handlers;
 using RegistaShop.WebUI.Services.CatalogServices.AboutServices;
 using RegistaShop.WebUI.Services.CatalogServices.BrandServices;
 using RegistaShop.WebUI.Services.CatalogServices.CategoryServices;
+using RegistaShop.WebUI.Services.CatalogServices.ContactServices;
 using RegistaShop.WebUI.Services.CatalogServices.FeatureServices;
 using RegistaShop.WebUI.Services.CatalogServices.FeatureSliderServices;
 using RegistaShop.WebUI.Services.CatalogServices.OfferDiscountServices;
@@ -11,6 +12,7 @@ using RegistaShop.WebUI.Services.CatalogServices.ProductDetailServices;
 using RegistaShop.WebUI.Services.CatalogServices.ProductImageServices;
 using RegistaShop.WebUI.Services.CatalogServices.ProductServices;
 using RegistaShop.WebUI.Services.CatalogServices.SpecialOfferServices;
+using RegistaShop.WebUI.Services.CommentServices;
 using RegistaShop.WebUI.Services.Concrete;
 using RegistaShop.WebUI.Services.Interfaces;
 using RegistaShop.WebUI.Settings;
@@ -108,6 +110,16 @@ builder.Services.AddHttpClient<IProductImageService, ProductImageService>(opt =>
 }).AddHttpMessageHandler<ClientCredentialTokenHandler>();
 
 builder.Services.AddHttpClient<IProductDetailService, ProductDetailService>(opt =>
+{
+	opt.BaseAddress = new Uri($"{values.OcelotUrl}/{values.Catalog.Path}/");
+}).AddHttpMessageHandler<ClientCredentialTokenHandler>();
+
+builder.Services.AddHttpClient<ICommentService, CommentService>(opt =>
+{
+	opt.BaseAddress = new Uri($"{values.OcelotUrl}/{values.Comment.Path}/");
+}).AddHttpMessageHandler<ClientCredentialTokenHandler>();
+
+builder.Services.AddHttpClient<IContactService, ContactService>(opt =>
 {
 	opt.BaseAddress = new Uri($"{values.OcelotUrl}/{values.Catalog.Path}/");
 }).AddHttpMessageHandler<ClientCredentialTokenHandler>();
