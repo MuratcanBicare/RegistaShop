@@ -1,6 +1,7 @@
 using Microsoft.AspNetCore.Authentication.Cookies;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using RegistaShop.WebUI.Handlers;
+using RegistaShop.WebUI.Services.BasketServices;
 using RegistaShop.WebUI.Services.CatalogServices.AboutServices;
 using RegistaShop.WebUI.Services.CatalogServices.BrandServices;
 using RegistaShop.WebUI.Services.CatalogServices.CategoryServices;
@@ -62,6 +63,11 @@ var values = builder.Configuration.GetSection("ServiceApiSettings").Get<ServiceA
 builder.Services.AddHttpClient<IUserService, UserService>(opt => 
 {
 	opt.BaseAddress = new Uri(values.IdentityServerUrl);	
+}).AddHttpMessageHandler<ResourceOwnerPasswordTokenHandler>();
+
+builder.Services.AddHttpClient<IBasketService, BasketService>(opt => 
+{
+	opt.BaseAddress = new Uri($"{values.OcelotUrl}/{values.Basket.Path}/");	
 }).AddHttpMessageHandler<ResourceOwnerPasswordTokenHandler>();
 
 builder.Services.AddHttpClient<ICategoryService, CategoryService>(opt =>
