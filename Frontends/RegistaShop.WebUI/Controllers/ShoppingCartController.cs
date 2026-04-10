@@ -17,19 +17,25 @@ namespace RegistaShop.WebUI.Controllers
 			_basketService = basketService;
 		}
 
-		public async Task<IActionResult> Index()
+		public IActionResult Index()
 		{
-			var values = await _basketService.GetBasket();
-			return View(values);
+
+			ViewBag.directory1 = "Ana Sayfa";
+			ViewBag.directory2 = "Ürünler";
+			ViewBag.directory3 = "Sepetim";
+
+			return View();
+
 		}
 
-		public async Task<IActionResult> AddBasketItem(string productId)
+		public async Task<IActionResult> AddBasketItem(string id)
 		{
-			var values = await _productService.GetByIdProductAsync(productId);
+			var values = await _productService.GetByIdProductAsync(id);
 			var items = new BasketItemDto
 			{
 				ProductId = values.ProductId,
 				ProductName = values.ProductName,
+				ProductImageUrl = values.ProductImageUrl,
 				Price = values.ProductPrice,
 				Quantity = 1
 			};
@@ -39,9 +45,9 @@ namespace RegistaShop.WebUI.Controllers
 
 		}
 
-		public async Task<IActionResult> RemoveBasketItem(string productId)
+		public async Task<IActionResult> RemoveBasketItem(string id)
 		{
-			await _basketService.RemoveBasketItem(productId);
+			await _basketService.RemoveBasketItem(id);
 			return RedirectToAction("Index");
 		}
 
