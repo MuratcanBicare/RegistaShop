@@ -10,6 +10,8 @@ namespace RegistaShop.Discount.Services
 		Task UpdateDiscountCouponAysnc(UpdateDiscountCouponDto updateCouponDto);
 		Task DeleteDiscountCouponAysnc(int id);
 		Task<GetByIdDiscountCouponDto> GetByIdDiscountCouponAsync(int id);
+		Task<ResultDiscountCouponDto> GetCodeDetailByCodeAsync(string code);
+		int GetDiscountCouponRate(string code);
 
 	}
 }

@@ -34,6 +34,15 @@ namespace RegistaShop.Discount.Controllers
 
 		}
 
+		[HttpGet("GetCodeDetailByCodeAsync")]
+		public async Task<IActionResult> GetCodeDetailByCodeAsync(string code)
+		{
+
+			var values = await _discountService.GetCodeDetailByCodeAsync(code);
+			return Ok(values);
+
+		}
+
 		[HttpPost]
 		public async Task<IActionResult> CreateDiscountCoupon(CreateDiscountCouponDto createCouponDto)
 		{
@@ -58,6 +67,15 @@ namespace RegistaShop.Discount.Controllers
 
 			await _discountService.UpdateDiscountCouponAysnc(updateCouponDto);
 			return Ok("İndirim Kuponu başarıyla güncellendi.");
+
+		}
+
+		[HttpGet("GetDiscountCouponRate")]
+		public IActionResult GetDiscountCouponRate(string code) 
+		{ 
+			
+			var values = _discountService.GetDiscountCouponRate(code);
+			return Ok(values);
 
 		}
 

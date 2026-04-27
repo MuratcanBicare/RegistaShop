@@ -17,15 +17,21 @@ namespace RegistaShop.WebUI.Controllers
 			_basketService = basketService;
 		}
 
-		public IActionResult Index()
+		public async Task<IActionResult> Index(string code, int rate, decimal discountedTotal)
 		{
-
+			ViewBag.code = code;
+			ViewBag.rate = rate;
+			ViewBag.discountedTotal = discountedTotal;
 			ViewBag.directory1 = "Ana Sayfa";
 			ViewBag.directory2 = "Ürünler";
 			ViewBag.directory3 = "Sepetim";
-
+			var values = await _basketService.GetBasket();
+			ViewBag.total = values.TotalPrice;
+			var totalWithTax = values.TotalPrice + values.TotalPrice / 100 * 10;
+			var tax = values.TotalPrice / 100 * 10;
+			ViewBag.totalWithTax = totalWithTax;
+			ViewBag.tax = tax;
 			return View();
-
 		}
 
 		public async Task<IActionResult> AddBasketItem(string id)

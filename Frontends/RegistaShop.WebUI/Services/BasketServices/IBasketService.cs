@@ -6,6 +6,7 @@ namespace RegistaShop.WebUI.Services.BasketServices
 	{
 
 		Task<BasketTotalDto> GetBasket();
+		//Task<BasketTotalDto> GetBasketByUserId(string userId);
 		Task SaveBasket(BasketTotalDto basketTotalDto);
 		Task DeleteBasket(string userId);
 		Task AddBasketItem(BasketItemDto basketItemDto);

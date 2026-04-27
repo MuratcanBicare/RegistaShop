@@ -18,9 +18,12 @@ namespace RegistaShop.WebUI.Services.BasketServices
 
 			if (values != null)
 			{
-				if (!values.BasketItems.Any(x => x.ProductId == basketItemDto.ProductId))
+				var existingItem = values.BasketItems.FirstOrDefault(x => x.ProductId == basketItemDto.ProductId);
+
+				if (existingItem != null)
 				{
-					values.BasketItems.Add(basketItemDto);
+					existingItem.Quantity += basketItemDto.Quantity;
+					existingItem.Price = basketItemDto.Price;
 				}
 				else
 				{
@@ -33,9 +36,9 @@ namespace RegistaShop.WebUI.Services.BasketServices
 
 		}
 
-		public Task DeleteBasket(string userId)
+		public async Task DeleteBasket(string userId)
 		{
-			throw new NotImplementedException();
+			await _httpClient.DeleteAsync($"baskets/{userId}");
 		}
 
 		public async Task<BasketTotalDto> GetBasket()
@@ -46,6 +49,21 @@ namespace RegistaShop.WebUI.Services.BasketServices
 			return values;
 
 		}
+
+		#region get basket by user id
+		/*
+		public async Task<BasketTotalDto> GetBasketByUserId(string userId)
+		{
+			var responseMessage = await _httpClient.GetAsync($"baskets/{userId}");
+			var values = await responseMessage.Content.ReadFromJsonAsync<BasketTotalDto>();
+			return values ?? new BasketTotalDto()
+			{
+				UserId = userId,
+				BasketItems = new List<BasketItemDto>()
+			};
+		}
+		*/
+		#endregion
 
 		public async Task<bool> RemoveBasketItem(string productId)
 		{
